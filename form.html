@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <form
+      method="post"
+      action="#"
+    >
+      <label for="username">Name: </label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter your Name"
+        minlength="2"
+        maxlength="10"
+        required
+      />
+      <br />
+      <br />
+      <label for="email">Email: </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your name"
+        required
+      />
+      <br />
+      <br />
+      <label for="phoneNumber">Phone Number: </label>
+      <input
+        type="tel"
+        name="telephone"
+        id="phoneNumber"
+        placeholder="Enter your phone number"
+      />
+      <br />
+      <br />
+      <label for="password">Password: </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      />
+      <br />
+      <br />
+      <label for="age">Age: </label>
+      <input
+        type="number"
+        name="userAge"
+        id="age"
+        placeholder="Enter your age"
+        required
+        min="2"
+        max="10"
+      />
+      <br />
+      <br />
+      <p>Qualification:</p>
+      <input
+        type="radio"
+        name="qualification"
+        id="matric"
+        value="matric"
+      />
+      <label for="matric">Matric</label>
+
+      <input
+        type="radio"
+        name="qualification"
+        id="intermediate"
+        value="intermediate"
+      />
+      <label for="matric">intermediate</label>
+      <input
+        type="radio"
+        name="qualification"
+        id="bs"
+        value="bs"
+      />
+      <label for="bs">BS</label>
+      <br />
+      <br />
+
+      <p>Hobbies:</p>
+
+      <input
+        type="checkbox"
+        name="hobby"
+        id="gardening"
+        value="gardening"
+      />
+      <label for="gardening">Gardening</label>
+
+      <input
+        type="checkbox"
+        name="hobby"
+        id="reading"
+        value="reading"
+      />
+      <label for="reading">Reading</label>
+
+      <input
+        type="checkbox"
+        name="hobby"
+        id="cooking"
+        value="cooking"
+      />
+      <label for="cooking">Cooking</label>
+      <br />
+      <br />
+      <p>Country:</p>
+      <select>
+        <option value="pakistan">Pakistan</option>
+        <option value="india">India</option>
+        <option value="uk">England</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <br />
+      <br />
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
+</html>
