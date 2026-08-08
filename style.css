@@ -1,1 +1,19 @@
-/* This is my style sheet */
+/* This is external css which is defined inside file with extension .css */
+
+body {
+  background-color: green;
+}
+
+h1 {
+  font-size: 50px;
+  color: gray;
+  font-weight: 900;
+}
+
+h2 {
+  color: green;
+}
+
+h3, h4, h5, h6 {
+  color: green;
+}
