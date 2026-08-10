@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Select element by element name */
+
+body {
+  background-color: white;
+}
+h1,
+h2,
+h3 {
+  font-family: "Rubik", Courier, monospace;
+}
+
+P {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div > h1 {
+  color: red;
+}
+
+/* select element by id  */
+
+#second-div > h1 {
+  color: green;
+}
+
+/* select elements by class name */
+
+.container {
+  background-color: blanchedalmond;
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  background-color: rgb(23, 14, 14);
+  width: 500px;
+  height: 300px;
+  opacity: 0.8;
+}
+.card-heading {
+  color: #fa9898;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.card-text {
+  color: #d36464;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+}
+.card-link {
+  text-decoration: none;
+}
+
+.card-footer {
+  background-color: antiquewhite;
+  height: 50px;
+}
+
+.card-footer-text {
+  color: red;
+  font-size: 20px;
+  font-style: italic;
+}
+
+h4 {
+  /* 0===>255   */
+  background-color: white;
+  color: rgb(100, 50, 220, 0.6);
+  font-size: 80px;
+}
