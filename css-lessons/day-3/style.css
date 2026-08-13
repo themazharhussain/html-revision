@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+}
+
+.box-1 {
+  display: block;
+  background-color: aqua;
+}
+
+.box-2 {
+  display: block;
+  background-color: rgb(81, 93, 93);
+}
+
+.box-3 {
+  display: block;
+  background-color: rgb(209, 34, 69);
+}
+
+.box-4 {
+  display: block;
+  background-color: rgb(71, 20, 183);
+}
+
+.card {
+  display: block;
+  background-color: bisque;
+  width: 800px;
+  margin: 10px auto;
+}
+
+.card > span {
+  display: inline-block;
+  width: 500px;
+  background-color: aqua;
+}
+
+/* In display:inline we cannot apply width and height where we can apply width and height in display:inline-block */
+/* 
+Import display values
+
+none
+block
+inline
+inline-block
+flex
+grid */
+
+p > span {
+  color: aqua;
+  font-size: 30px;
+}

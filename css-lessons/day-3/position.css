@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  height: 500px;
+  background-color: red;
+}
+
+.card {
+  position: static;
+  background-color: antiquewhite;
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+}
