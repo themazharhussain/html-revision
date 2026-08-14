@@ -129,3 +129,16 @@ sticky
   width: 200px;
   height: 200px;
 }
+
+.sticky-container {
+  padding: 20px;
+  background-color: red;
+}
+
+.sticky-card {
+  position: sticky;
+  top: 80px;
+  background-color: antiquewhite;
+  width: 200px;
+  height: 200px;
+}
