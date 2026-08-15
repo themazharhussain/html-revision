@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Z index demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .container {
+        position: relative;
+        background-color: yellow;
+        width: 1000px;
+        height: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      .card {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        transition: transform 1s ease-in-out;
+      }
+
+      .card:hover {
+        z-index: 50;
+        transform: translate(500px);
+      }
+
+      .blue {
+        z-index: 10;
+        background-color: blue;
+        transform: rotate(30deg);
+      }
+
+      .red {
+        z-index: 20;
+        background-color: red;
+        transform: rotate(-30deg);
+      }
+
+      .green {
+        z-index: 30;
+        background-color: green;
+        transform: rotate(10deg);
+      }
+
+      .black {
+        z-index: 40;
+        background-color: black;
+        transform: rotate(-10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card blue"></div>
+      <div class="card red"></div>
+      <div class="card green"></div>
+      <div class="card black"></div>
+    </div>
+  </body>
+</html>
