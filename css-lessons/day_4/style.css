@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* This is flex container */
+.container {
+  background-color: yellow;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+}
+
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.black {
+  background-color: black;
+}
