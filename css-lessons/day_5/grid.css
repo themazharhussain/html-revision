@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*
+1. Fixed lengths (100px 300px 200px)
+2. Percentages (20% 60% 20%)
+3. fr unit (1fr 2fr 1fr)
+4. auto (auto auto auto)
+5. repeat() (repeat(3, 1fr))
+6. minmax() (minmax(80px, 1fr) 150px 150px)
+ */
+
+/*
+grid-template-columns
+grid-template-rows
+column-gap
+row-gap
+gap
+gutters
+ */
+
+/* 
+These are grid container properties
+justify-content main axis
+align-content   secondary axis
+place-content  shorthand
+ */
+
+/* 
+grid-column-start - Specifies on which column-line the grid item will start
+grid-column-end - Specifies on which column-line the grid item will end
+grid-column - Shorthand property for grid-column-start and grid-column-end
+grid-row-start - Specifies on which row-line the grid item will start
+grid-row-end - Specifies on which row-line the grid item will end
+grid-row - Shorthand property for grid-row-start and grid-row-end
+
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  .item1 {
+  grid-column: 1 / span 3;
+}
+}
+*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 300px 100px;
+  grid-template-rows: 200px 300px 100px;
+  /* justify-content: center;
+  align-content: center; */
+  place-content: center;
+
+  gap: 10px;
+  padding: 20px;
+  background-color: aqua;
+  height: 100vh;
+}
+
+.card {
+  height: auto;
+  background-color: rgb(81, 4, 154);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: aliceblue;
+}
+
+/* .card-1 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+} */
+
+.card-5 {
+  grid-column: 1 / span 3;
+}

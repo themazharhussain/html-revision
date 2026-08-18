@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animation-slide 1s ease-in-out;
+}
+
+/* 
+animation-name
+
+animation-duration
+
+animation-delay
+
+animation-timing-functions(ease,linear,ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n)
+
+animation-iteration-count (how many times an animation repeat. Infinite means animations always play)
+
+animation-direction (normal,reverse,alternate, alternate-reverse)
+
+normal - The animation is played as normal (forwards). This is default
+reverse - The animation is played in reverse direction (backwards)
+alternate - The animation is played forwards first, then backwards
+alternate-reverse - The animation is played backwards first, then forwards
+
+animation-fill-mode 
+none - Default value. Animation will not apply any styles to the element before or after it is executing
+forwards - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+backwards - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+
+from to
+percentage like 10% 20% 30% ... 100%
+
+*/
+
+/* 
+Animation shorthand 
+animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction
+*/
+.card {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  border-radius: 1px solid green;
+  border-radius: 50%;
+  animation-name: change-bg;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+}
+
+@keyframes change-bg {
+  from {
+    background-color: aqua;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes animation-slide {
+  from {
+    width: 0;
+    height: 100vh;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+  }
+}

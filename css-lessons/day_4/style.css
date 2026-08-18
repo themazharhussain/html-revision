@@ -6,8 +6,8 @@
 /* This is flex container */
 .container {
   background-color: yellow;
-  height: 1000px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
