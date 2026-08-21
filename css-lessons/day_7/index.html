@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>CSS Transform property</title>
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: red;
+      }
+
+      .card {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+        /* transform: rotate(20deg); */
+        /* transform: skewX(20deg); */
+        /* transform: scale(1.5); */
+        /* transform: translateZ(200px); */
+        transition: transform 1s ease-in-out;
+      }
+
+      .card:hover {
+        /* transform: scale(1.2); */
+        transform: rotate3d(1, 2, 3, 60deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card"></div>
+  </body>
+</html>
