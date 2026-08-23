@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Backgrounds in CSS</title>
+
+    <style>
+      :root {
+        --primary-color: orange;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      /* 
+      css units
+            percentage
+            vh
+            vw
+            rem
+            em
+             */
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100vw;
+        height: 100vh;
+        /* background-image: url("./background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; */
+        background: url("./background.png") center/cover no-repeat;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.5em;
+        color: white;
+        font-weight: 800;
+        line-height: 50px;
+      }
+      .hero-content p {
+        font-size: 1.25rem;
+        color: white;
+        opacity: 0.8;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .btn {
+        padding: 10px 40px;
+        border-radius: 5px;
+        font-size: 18px;
+        color: white;
+        text-transform: capitalize;
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+      }
+      .btn-secondary {
+        background-color: #111827;
+        border: 1px solid gray;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 35px;
+          line-height: 35px;
+        }
+        .hero-content p {
+          font-size: 18px;
+        }
+        .btn {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Every home is a <br />destination</h1>
+        <p>
+          The best of Luxury Retreats is now Flowbite Luxe—offering the
+          <br />world's most extraordinary homes with the highest standard of
+          service.
+        </p>
+        <div class="row">
+          <button class="btn btn-primary">Get started</button>
+          <button class="btn btn-secondary">Speak to Sales</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
