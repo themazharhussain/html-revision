@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3e6e6;
+  font-family: Inter, "sans-serif";
+  max-width: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.card {
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow:
+    1px 1px 15px rgba(0, 0, 0, 0.1),
+    -1px -1px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-heading {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #0f1111;
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.cat-card {
+  margin-bottom: 10px;
+}
+
+.cat-img {
+  width: 150px;
+  aspect-ratio: 4/3;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cat-name {
+  font-size: 12px;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #2162a1;
+}
+
+/* Phone — up to 480px — no media query needed (mobile-first default) */
+
+/* Large phone / small tablet */
+@media (min-width: 480px) {
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 768px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

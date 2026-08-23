@@ -73,11 +73,11 @@ grid-row - Shorthand property for grid-row-start and grid-row-end
   color: aliceblue;
 }
 
-/* .card-1 {
+.card-1 {
   grid-column-start: 3;
-  grid-row-start: 1;
-} */
+  grid-row-start: 3;
+}
 
 .card-5 {
-  grid-column: 1 / span 3;
+  grid-column: span 3 ;
 }
