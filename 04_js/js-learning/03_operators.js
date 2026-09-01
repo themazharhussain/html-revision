@@ -13,8 +13,8 @@
 
 // Type conversion (We can convert one datatype to another datatype in js)
 
-// String to number  String()
-// Number to string Number() 
+// String to number  Number()
+// Number to string String() 
 // parseInt and parsFloat   parseInt() parseFloat()
 
 // == vs === (double equal only compare values not type while triple equal compare values as well as types too)
@@ -54,7 +54,57 @@ x--; // x = x - 1
 
 //Comparison operators
 
+//console.log(10 > 20)
+//console.log(10 >= 10)
+//console.log(10 != 20)  // Do not check type
+//console.log(10 !== 20) // Check type too
 
 
-console.log(10 > 20)
-console.log(10 >= 10)
+//Logic operators
+
+
+// and &&  T && T = T
+//console.log(10 > 20 && 10 == 10)
+
+// or ||  T || T
+//console.log(10 > 20 || 10 == 10)
+
+// Not ! this is unary operator
+
+//console.log(!(10 > 20))
+
+// Datatypes ==> string, number, boolean, symbol, undefined ,null, bigint
+
+// String to number    Number()
+
+
+// typeof operator is used to check datatype of variable
+const stringNumber = "hello"
+const numberAfterConv = Number(stringNumber)
+const randomeNumber = 10
+const randomeNumberToString = String(randomeNumber)
+//console.log(typeof stringNumber)
+//console.log(numberAfterConv) // It will print NaN   not a number
+//console.log(typeof randomeNumberToString)
+
+const textNumber = "10px"
+const textFloatNumber = "10.5pxafadfaf"
+
+//console.log(parseInt(textNumber)) //It will extract the number part from he string
+//console.log(typeof (parseInt(textNumber)))
+
+//console.log(parseInt(textFloatNumber))
+//console.log(parseFloat(textFloatNumber)) 
+
+
+//It will check only value. Return boolean
+console.log(10 == "10")
+
+// IT will check value and type. Return boolean
+console.log(10 === "10")
+
+console.log(10 === Number("10"))
+
+// Falsy values===>   false, 0, "", null, undefined, NaN,
+
+console.log("")
