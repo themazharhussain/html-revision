@@ -7,7 +7,7 @@
 
 // Assignment ==>  = += -= *= /=  a++ a-- (These are used to assign values to variables)
 
-// Comparison    >  >=  <  <=  !== !=    (These are used to compare values)
+// Comparison    >  >=  <  <=  !== !=    (These are used to compare values and return true or false)
 
 // Logical  &&(and)  ||(or) !(not) (These are used to compare two or more conditions)
 
