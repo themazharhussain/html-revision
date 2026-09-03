@@ -1,89 +1,18 @@
-# JavaScript — Day 3
-## Variables and Data Types
+# Variables and Data Types
 
-**Duration:** 3 hours
-**Today's goal:** Students store information in variables using const and let, and understand all the basic data types.
+A variable is a named container that stores a value. You give it a name, put a value inside, and use that name to access the value anywhere in your code.
 
 ---
 
-# PART 1 — Your Preparation (Night Before)
+## Why We Need Variables
 
-**Practice this yourself:**
-
-```javascript
-const name = "Ahmed"
-let score = 0
-score = score + 10
-
-console.log(typeof name)
-console.log(typeof 42)
-console.log(typeof true)
-```
-
-**Things you must know clearly:**
-
-const for values that never change. let for values that change. Never var.
-
-The data types:
-
-```javascript
-const text = "Ahmed"       // String
-const number = 42          // Number
-const yes = true           // Boolean
-let empty                  // Undefined
-const nothing = null       // Null
-```
-
-typeof results:
-
-```javascript
-typeof "hi"      // "string"
-typeof 42        // "number"
-typeof true      // "boolean"
-typeof undefined // "undefined"
-typeof null      // "object"  ← the famous bug
-```
-
-**Questions students will ask — your answers:**
-
-"Why can I not change a const?"
-Because const means constant, meaning it never changes. You promised JavaScript this value stays the same. JavaScript protects you by not allowing changes. This prevents accidental bugs.
-
-"What is the difference between null and undefined?"
-undefined means you made a variable but did not give it a value. JavaScript set it to undefined for you. null means you deliberately set it to empty on purpose. undefined is accidental empty, null is intentional empty.
-
-"Why does typeof null say object?"
-It is a bug from when JavaScript was created in 1995. It was never fixed because too many websites depend on the old behavior now. Every developer just knows and remembers this.
-
----
-
-# PART 2 — The Class
-
-## Step 1 — Homework Check (10 minutes)
-
-Students swap seats. Check day2 memory-practice.js.
-
-Did their predictions match the results?
-Did they understand why objects change together?
-Did the spread copy work correctly?
-
-One good thing, one thing to improve.
-
----
-
-## Step 2 — Why We Need Variables (10 minutes)
-
-Start with a real situation. Say:
-
-"You are building a shopping website. A product costs 500 rupees. The customer buys 3. There is a 10 percent discount. You need to calculate the total. Where do you keep all these numbers so you can use them in your calculation? You store them in variables."
-
-Show the idea without variables first, messy:
+Look at this calculation with no variables.
 
 ```javascript
 console.log(500 * 3 - (500 * 3 * 10 / 100))
 ```
 
-Say: "This works but it is unreadable. What is 500? What is 3? What is 10? Nobody knows. Now watch with variables."
+This works but nobody can read it. What is 500? What is 3? What is 10? With variables the code explains itself.
 
 ```javascript
 const price = 500
@@ -97,17 +26,13 @@ const total = subtotal - discount
 console.log(total)
 ```
 
-Say:
-
-"Now the code explains itself. Anyone reading it understands. price, quantity, discount. This is why we use variables. They store information and give it a meaningful name."
+Now anyone reading it understands. Variables store information and give it a meaningful name.
 
 ---
 
-## Step 3 — const and let (35 minutes)
+## const for Values That Never Change
 
-Create day3.js.
-
-### const for values that never change
+Use const when a value will never change.
 
 ```javascript
 const shopName = "Spice House"
@@ -115,87 +40,72 @@ const ownerName = "Ahmed Khan"
 const city = "Lahore"
 
 console.log(shopName)
-console.log(ownerName)
-console.log(city)
 ```
 
-Explain each part:
-
-const is the keyword that creates the variable.
-shopName is the name you choose.
-The equals sign puts the value into the variable.
-"Spice House" is the value.
-
-Try to change a const:
+If you try to change a const, you get an error.
 
 ```javascript
 const shopName = "Spice House"
-shopName = "New Name"
+shopName = "New Name"   // TypeError: Assignment to constant variable
 ```
 
-Show the error: Assignment to constant variable.
+This error is a good thing. You said the value never changes, and JavaScript holds you to that. It protects you from accidental changes.
 
-Say:
+---
 
-"This error is good. You said const, meaning it never changes. JavaScript is holding you to your promise. In real projects this saves you from accidentally changing something important."
+## let for Values That Change
 
-### let for values that change
+Use let when a value needs to change over time.
 
 ```javascript
 let tablesAvailable = 10
-console.log(tablesAvailable)
+console.log(tablesAvailable)   // 10
 
 tablesAvailable = 8
-console.log(tablesAvailable)
+console.log(tablesAvailable)   // 8
 
 tablesAvailable = tablesAvailable - 1
-console.log(tablesAvailable)
+console.log(tablesAvailable)   // 7
 ```
 
-Show 10, 8, 7 in the console.
+A table count changes when people book. A score changes as you play. A cart total changes as you add items. Use let for anything that will be updated.
 
-Say:
+---
 
-"let is for values that change. A table count changes when people book. A score changes as you play. A cart total changes as you add items. Use let for anything that will be updated."
-
-### The rule
-
-Write on paper and keep it visible:
+## The Rule
 
 ```
-Never changes  →  const
-Will change    →  let
+Value never changes  →  const
+Value will change    →  let
 Never use var
 ```
 
-Say: "Start with const always. Only switch to let when you know the value must change. Most of your variables should be const. This is the professional habit."
+Start with const always. Only switch to let when you know the value must change. Most of your variables should be const. This is the professional habit.
 
-### Naming rules
+---
+
+## Naming Rules
 
 ```javascript
-const firstName = "Ahmed"      // correct, camelCase
+const firstName = "Ahmed"      // correct
 const totalPrice = 500         // correct
 const isLoggedIn = true        // correct
 
 const first name = "Ahmed"     // wrong, no spaces
 const first-name = "Ahmed"     // wrong, no dashes
-const 2name = "Ahmed"          // wrong, cannot start with number
-const const = "Ahmed"          // wrong, reserved word
+const 2name = "Ahmed"          // wrong, cannot start with a number
+const const = "Ahmed"          // wrong, const is a reserved word
 ```
 
-Explain camelCase: first word lowercase, every new word starts with a capital. firstName, totalPrice, isUserActive, currentScore.
+The naming style is called camelCase. The first word is all lowercase. Every new word after that starts with a capital letter. Like firstName, totalPrice, isUserActive, currentScore.
 
-Say:
-
-"Good names make code readable. When someone sees totalPrice they understand instantly. When they see x or a they understand nothing. Name your variables so another person can read your code. Because they will."
+Good names make code readable. When someone sees totalPrice they understand instantly. When they see x or a they understand nothing. Name your variables so another person can read your code.
 
 ---
 
-## Step 4 — Data Types (40 minutes)
+## Data Types
 
-Say:
-
-"Different information is different types. A name is text. An age is a number. Is the shop open is yes or no. JavaScript needs to know the type so it knows what it can do with the value."
+Different information is stored as different types. JavaScript needs to know the type so it knows what it can do with the value.
 
 ### String for text
 
@@ -204,10 +114,10 @@ const productName = "Samsung Galaxy"
 const city = 'Lahore'
 const message = `Welcome`
 
-console.log(typeof productName)  // "string"
+console.log(typeof productName)   // "string"
 ```
 
-Three ways to write strings: double quotes, single quotes, backticks. All work. Backticks have special powers we learn later.
+There are three ways to write strings: double quotes, single quotes, and backticks. All work. Backticks have special powers you learn later.
 
 ### Number for all numbers
 
@@ -216,22 +126,18 @@ const age = 25
 const price = 499.99
 const temperature = -5
 
-console.log(typeof age)  // "number"
+console.log(typeof age)   // "number"
 ```
 
-JavaScript has one number type for whole numbers and decimals both.
+JavaScript has one number type for whole numbers and decimals both. There is no separate type for decimals.
 
-Show the famous gotcha. Ask students to predict first:
+There is a common gotcha with numbers and text.
 
 ```javascript
-console.log("5" + 3)
+console.log("5" + 3)   // "53"
 ```
 
-They guess 8. Show the result: "53"
-
-Say:
-
-"When you add a string and a number, JavaScript joins them as text. The result is 53 as text, not 8. This is one of the most common beginner bugs. When your math gives wrong answers, check if you accidentally have a string instead of a number. Tomorrow we learn how to fix this."
+When you add a string and a number, JavaScript joins them as text. The result is the text 53, not the number 8. This is a common beginner bug. When your math gives wrong answers, check if you accidentally have a string instead of a number.
 
 ### Boolean for yes or no
 
@@ -239,12 +145,10 @@ Say:
 const isShopOpen = true
 const hasDiscount = false
 
-console.log(typeof isShopOpen)  // "boolean"
+console.log(typeof isShopOpen)   // "boolean"
 ```
 
-Only two values, true or false. No quotes, no capitals.
-
-Say: "Boolean is for any yes or no. Is the user logged in. Is the cart empty. Does the product have a discount. You will use boolean constantly."
+Boolean has only two values, true or false. No quotes, no capital letters. Used for any yes or no situation, like is the user logged in, is the cart empty.
 
 ### Undefined for no value yet
 
@@ -254,7 +158,7 @@ console.log(userName)          // undefined
 console.log(typeof userName)   // "undefined"
 ```
 
-Say: "You made the variable but did not put anything in it. JavaScript automatically set it to undefined. It is an empty box you have not filled yet."
+You made the variable but did not put anything in it. JavaScript automatically set it to undefined. It is an empty box you have not filled.
 
 ### Null for intentionally empty
 
@@ -264,177 +168,52 @@ console.log(selectedProduct)         // null
 console.log(typeof selectedProduct)  // "object"
 ```
 
-Say:
+null is when you deliberately set something to empty. For example when a shop page first loads, no product is selected yet, so selectedProduct is null. When the user clicks a product, it gets a value.
 
-"null is when you deliberately set something to empty. For example when a shop page first loads, no product is selected yet, so selectedProduct is null. When the user clicks a product, it gets a value. The difference: undefined is JavaScript saying nothing is here yet. null is you saying I put nothing here on purpose."
+The difference between the two empty types.
 
-The typeof null bug:
+```
+undefined  =  no value given yet, accidental empty
+null       =  deliberately set to empty, intentional
+```
 
-"Notice typeof null says object. That is a mistake from 1995 that was never fixed. Every developer knows it. Just remember it."
+The typeof null result of "object" is a famous bug from 1995 that was never fixed. Every developer knows it. Just remember it.
 
 ---
 
-## BREAK (10 minutes)
+## typeof
 
----
-
-## Step 5 — typeof Practice (15 minutes)
-
-Type all of these together and read the results:
+The typeof operator tells you the type of a value.
 
 ```javascript
-console.log(typeof "Ahmed Khan")
-console.log(typeof 42)
-console.log(typeof 3.14)
-console.log(typeof true)
-console.log(typeof false)
-console.log(typeof undefined)
-console.log(typeof null)
-```
-
-Students write the results on paper and keep it for the week:
-
-```
-"string"
-"number"
-"number"
-"boolean"
-"boolean"
-"undefined"
-"object"   ← the bug
+console.log(typeof "Ahmed")      // "string"
+console.log(typeof 42)           // "number"
+console.log(typeof 3.14)         // "number"
+console.log(typeof true)         // "boolean"
+console.log(typeof undefined)    // "undefined"
+console.log(typeof null)         // "object"   the famous bug
 ```
 
 ---
 
-## Step 6 — Student Exercises (35 minutes)
-
-Tell students: "Read the console error before asking me. It usually tells you exactly what is wrong."
-
-### Exercise 1 — Shop Profile (15 minutes)
-
-Students create shop.js. Create variables for a shop:
-
-A shop name that never changes, use const
-An owner name, use const
-The city, use const
-The year it started, use const
-The rating out of 5, use const
-Whether it is open now, use const
-How many products available, this changes, use let
-The current discount percent, this changes, use let
-
-Print all values with labels using console.log.
-
-Then simulate two events:
-One customer buys, so products reduce by 1.
-A sale starts, so discount increases by 5.
-
-Print the updated values.
-
-Check: are all const and let used correctly? Are names camelCase?
-
-### Exercise 2 — Type Detective (15 minutes)
-
-Write on paper. Students write the type without using typeof, then check.
-
-```
-"Hello"        →
-42             →
-3.14           →
-true           →
-"true"         →
-"42"           →
-null           →
-undefined      →
-0              →
-false          →
-```
-
-Tricky ones: "true" is a string not boolean. "42" is a string not number. If they get these, they understood.
-
-### Exercise 3 — Bug Hunt (5 minutes)
-
-Find and fix all the mistakes:
+## Quick Reference
 
 ```javascript
-const full name = "Sara"
-Let age = 22
-const isStudent = True
-let const city = "Karachi"
+const name = "Ahmed"    // never changes
+let score = 0           // will change
 
-console.log(Full name)
-console.log(Age)
-console.log(isstudent)
+// Five basic data types
+const text = "Ahmed"    // String
+const num = 42          // Number
+const yes = true        // Boolean
+let empty               // Undefined
+const nothing = null    // Null
+
+// Check the type
+typeof value
 ```
 
-Bugs: space in full name, Let should be lowercase, True should be lowercase, cannot use let and const together, and the console.log names have wrong capitals.
-
----
-
-## Step 7 — Review (10 minutes)
-
-Students swap seats. Check shop.js.
-
-Is every const truly unchanging? Is every let something that changes?
-Are all names camelCase?
-Do the simulations update correctly?
-
-One good thing, one thing to improve.
-
----
-
-## Step 8 — Quiz and Homework (10 minutes)
-
-### Quiz
-
-1. When do you use const and when let?
-2. What is camelCase? Give an example.
-3. Name the five basic data types.
-4. What is the difference between null and undefined?
-5. What does typeof null return and why is it strange?
-6. What is the result of "5" + 3 and why?
-7. What happens when you try to change a const?
-
-### Homework
-
-Create my-profile.js with at least 10 variables about yourself:
-
-Full name, age, city, favourite subject, current score out of 100, whether you are a student true or false, monthly pocket money, savings goal, the course name, years of coding experience starting at 0.
-
-Print all with labels like console.log("Name:", yourName).
-
-Then update your score by adding 10 and print it.
-Update your years of experience to 1 and print it.
-Update your savings goal by adding 2000 and print it.
-
-Use const for things that do not change and let for things you update.
-
----
-
-# PART 3 — What We Learned Today
-
-## Variables
-
-```javascript
-const shopName = "Spice House"   // never changes
-let tablesAvailable = 10         // will change
-```
-
-Use const by default. Use let only when the value must change. Never var.
-
-## camelCase Naming
-
-```javascript
-firstName        correct
-totalPrice       correct
-first name       wrong, no spaces
-first-name       wrong, no dashes
-2name            wrong, starts with number
-```
-
-## Five Data Types
-
-| Type | Example | typeof |
+| Type | Example | typeof result |
 |---|---|---|
 | String | "Ahmed" | "string" |
 | Number | 42 or 3.14 | "number" |
@@ -442,25 +221,91 @@ first-name       wrong, no dashes
 | Undefined | let x with no value | "undefined" |
 | Null | null | "object" (bug) |
 
-## null vs undefined
-
-undefined = no value given yet, accidental empty
-null = deliberately set to empty, intentional
-
-## The String Plus Number Gotcha
-
-```javascript
-"5" + 3   // "53" not 8
-```
-
-Adding a string and number joins them as text. Fix with conversion, learned tomorrow.
-
 ---
 
-# PART 4 — After Class Notes
+# Exercises
 
-1. Did const vs let click for both students?
-2. Are they naming variables in camelCase without reminders?
-3. Did the "5" + 3 gotcha surprise them?
-4. Who needs more practice with data types?
-5. What to revise before Day 4?
+Copy the block below into a .js file and write your code under each exercise.
+
+```javascript
+// -------------------------------------------------------
+// Exercise 1
+// -------------------------------------------------------
+// Create three const variables: your name, your city, and your birth year. Print all three.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 2
+// -------------------------------------------------------
+// Create a let variable called score starting at 0. Add 10 to it. Then add 5 more. Print the score after each change.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 3
+// -------------------------------------------------------
+// Try to change a const variable after creating it. Observe the error. Write a comment explaining why it happened.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 4
+// -------------------------------------------------------
+// Create one variable of each type: a string, a number, a boolean, an undefined, and a null. Print the typeof of each one.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 5
+// -------------------------------------------------------
+// Predict the type of each of these before checking with typeof: "42", 42, true, "true", null, undefined. Then verify.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 6
+// -------------------------------------------------------
+// Create variables for a product: name, price, quantity in stock, and whether it is available. Use the correct type for each. Print them all with labels.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 7
+// -------------------------------------------------------
+// Write the result of "5" + 3 and explain in a comment why it is not 8.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 8
+// -------------------------------------------------------
+// Create a variable with no value assigned. Print it and its type. Then create a variable set to null. Print it and its type. Write a comment on the difference.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 9
+// -------------------------------------------------------
+// Take a list of variable names and mark which are valid and which break the naming rules: firstName, first name, 2ndPlace, total_price, isActive, my-variable. Fix the invalid ones.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 10
+// -------------------------------------------------------
+// Create a small profile of yourself using at least six variables with correct types and correct const or let choices. Print a summary of all of them.
+
+// Write your code here
+
+
+```

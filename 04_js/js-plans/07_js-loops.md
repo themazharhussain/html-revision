@@ -1,71 +1,21 @@
-# JavaScript — Loops
+# Loops
 
-**Duration:** 3 hours
-**Roadmap position:** After Conditionals, before Functions
-**Today's goal:** Students repeat code using for and while loops.
-
-**Already taught:** variables, data types, operators, conditionals, template literals
-**Not yet taught:** functions, arrays, objects. We touch arrays lightly today only to show for of, with a clear preview note.
+A loop repeats code many times without writing it again and again. Loops are one of the most powerful tools in programming.
 
 ---
 
-# PART 1 — Your Preparation (Night Before)
+## Why Loops Exist
 
-**Practice this yourself:**
-
-```javascript
-for (let i = 1; i <= 5; i++) {
-    console.log(i)
-}
-
-let count = 0
-while (count < 5) {
-    console.log(count)
-    count++
-}
-```
-
-**Things you must know clearly:**
-
-for loop has three parts: start, condition, update.
-while loop just checks a condition.
-break stops the loop. continue skips one round.
-
-**Note on arrays:** for of loops over arrays. Arrays are taught fully later. Today, introduce a simple array in one line only as a preview so students can see for of. Tell them clearly that arrays get a full lesson soon.
-
-**Questions students will ask — your answers:**
-
-"When do I use for and when while?"
-Use for when you know how many times to repeat, like 1 to 100. Use while when you do not know and just want to keep going until something happens.
-
-"What is an infinite loop?"
-A loop where the condition never becomes false, so it runs forever and freezes the browser. Always make sure the loop will eventually stop.
-
-"What is that square bracket thing in for of?"
-That is an array, a list of items. You will learn arrays fully in a few days. For now just know for of goes through each item in a list.
-
----
-
-# PART 2 — The Class
-
-## Step 1 — Homework Check (10 minutes)
-
-Check movie-ticket.js. Discounts apply correctly? Tested different ages? One good thing, one improve.
-
-## Step 2 — Why Loops Exist (10 minutes)
-
-Ask: "I want to print 1 to 100. Will you write 100 console.log lines?"
-
-Show the painful way:
+Imagine printing numbers 1 to 100 by hand.
 
 ```javascript
 console.log(1)
 console.log(2)
 console.log(3)
-// imagine 100 times
+// imagine writing this 100 times
 ```
 
-Then the solution:
+A loop does it in three lines.
 
 ```javascript
 for (let i = 1; i <= 100; i++) {
@@ -73,11 +23,13 @@ for (let i = 1; i <= 100; i++) {
 }
 ```
 
-Say: "Three lines instead of a hundred. Any time you repeat something, use a loop. This is one of the most powerful tools in programming."
+Any time you repeat something, use a loop.
 
-## Step 3 — The for Loop (35 minutes)
+---
 
-Three parts inside the parentheses:
+## The for Loop
+
+The for loop has three parts inside the parentheses.
 
 ```javascript
 for (let i = 1; i <= 5; i++) {
@@ -85,20 +37,18 @@ for (let i = 1; i <= 5; i++) {
 }
 ```
 
-Explain each part:
+The three parts.
 
 ```
 for (let i = 1;   i <= 5;   i++)
-      START        CHECK     UPDATE
+      start        check     update
 ```
 
-START: creates counter at 1, runs once.
-CHECK: before every round, if true run the code, if false stop.
-UPDATE: after each round, add 1.
+The start creates a counter at 1 and runs once. The check runs before every round, and if it is true the code runs, if false the loop stops. The update runs after each round.
 
-Walk through it out loud step by step so they see the counter change.
+Step by step, the counter starts at 1. Is 1 less than or equal to 5? Yes, run the code, then add 1. Is 2 less than or equal to 5? Yes, continue. This repeats until the counter becomes 6, the check is false, and the loop stops.
 
-Counting backwards:
+Counting backwards.
 
 ```javascript
 for (let i = 10; i >= 1; i--) {
@@ -107,15 +57,15 @@ for (let i = 10; i >= 1; i--) {
 console.log("Done")
 ```
 
-Counting by 2:
+Counting by 2.
 
 ```javascript
 for (let i = 0; i <= 20; i += 2) {
-    console.log(i)
+    console.log(i)   // 0, 2, 4, 6 ... 20
 }
 ```
 
-Multiplication table using template literals:
+A multiplication table.
 
 ```javascript
 const number = 7
@@ -125,9 +75,11 @@ for (let i = 1; i <= 10; i++) {
 }
 ```
 
-## Step 4 — The while Loop (25 minutes)
+---
 
-Simpler, just checks a condition:
+## The while Loop
+
+The while loop is simpler. It keeps going while a condition is true.
 
 ```javascript
 let count = 1
@@ -138,9 +90,9 @@ while (count <= 5) {
 }
 ```
 
-Say: "You must update the counter yourself inside the loop. If you forget count++, the condition stays true forever. That is an infinite loop and it freezes the browser."
+You must update the counter yourself inside the loop. If you forget count++, the condition stays true forever and the loop never stops. That is called an infinite loop and it freezes the browser.
 
-Use while when you do not know how many times:
+Use while when you do not know how many times to repeat.
 
 ```javascript
 let balance = 10000
@@ -154,21 +106,15 @@ while (balance > 0) {
 console.log("Money finished")
 ```
 
-Infinite loop warning:
+Here we do not know in advance how many months it takes for the money to run out. while is perfect for this.
 
-```javascript
-// NEVER do this
-// let x = 1
-// while (x > 0) {
-//     x++    runs forever
-// }
-```
+Always make sure your loop condition will eventually become false. If you make an infinite loop, close the browser tab quickly.
 
-Say: "Always make sure your loop condition will eventually become false. If you make an infinite loop, close the tab quickly."
+---
 
-## Step 5 — break and continue (15 minutes)
+## break and continue
 
-break stops the whole loop:
+break stops the whole loop immediately.
 
 ```javascript
 for (let i = 1; i <= 10; i++) {
@@ -177,10 +123,10 @@ for (let i = 1; i <= 10; i++) {
     }
     console.log(i)
 }
-// prints 1 2 3 4 then stops
+// prints 1 2 3 4 then stops completely
 ```
 
-continue skips one round:
+continue skips the current round and moves to the next.
 
 ```javascript
 for (let i = 1; i <= 10; i++) {
@@ -189,18 +135,16 @@ for (let i = 1; i <= 10; i++) {
     }
     console.log(i)
 }
-// prints 1 2 3 4 6 7 8 9 10, skips 5
+// prints 1 2 3 4 6 7 8 9 10, skips only 5
 ```
 
-Say: "break stops everything. continue skips just this round and keeps going. Notice we used the if you learned yesterday inside the loop. Loops and conditionals work together all the time."
+break means stop everything. continue means skip just this one round and keep going. Notice loops and conditionals work together here.
 
-## BREAK (10 minutes)
+---
 
-## Step 6 — for of Loop (20 minutes)
+## for of Loop
 
-Preview note first. Say:
-
-"Now I will show you a special loop called for of. It goes through a list of items called an array. You will learn arrays fully in a few days. For today, just see how for of makes going through a list very easy. Do not worry about the array details yet."
+The for of loop goes through a list of items called an array. Arrays are covered in detail later, but here is how for of looks.
 
 ```javascript
 const cities = ["Lahore", "Karachi", "Islamabad"]
@@ -210,9 +154,9 @@ for (const city of cities) {
 }
 ```
 
-Say: "for of automatically gives you each item one by one. No counter needed. Very clean. When we learn arrays properly, you will use for of constantly."
+for of automatically gives you each item one by one. No counter needed. This is the cleanest way to go through a list.
 
-A simple example using template literals:
+A simple example that adds up numbers.
 
 ```javascript
 const prices = [500, 1200, 800]
@@ -224,116 +168,138 @@ for (const price of prices) {
 console.log(`Total: Rs ${total}`)
 ```
 
-## Step 7 — Student Exercises (30 minutes)
-
-### Exercise 1 — Multiplication Table (10 minutes)
-
-```javascript
-// Print the full table of any number from 1 to 10
-// Use a for loop and template literals
-```
-
-### Exercise 2 — Number Patterns (10 minutes)
-
-```javascript
-// Print all even numbers from 1 to 50 using a loop
-// Print all numbers from 100 down to 1
-// Print the sum of numbers from 1 to 100
-```
-
-### Exercise 3 — FizzBuzz (10 minutes)
-
-A famous exercise:
-
-```javascript
-// Print numbers 1 to 30
-// If divisible by 3, print "Fizz" instead
-// If divisible by 5, print "Buzz" instead
-// If divisible by both, print "FizzBuzz"
-// Hint: use % which you learned, and if else
-```
-
-## Step 8 — Review (10 minutes)
-
-Check FizzBuzz. Correct output? Loops and conditions working together? One good thing, one improve.
-
-## Step 9 — Quiz and Homework (10 minutes)
-
-### Quiz
-
-1. What are the three parts of a for loop?
-2. When do you use while instead of for?
-3. What is an infinite loop and how do you avoid it?
-4. What does break do? What does continue do?
-5. How do you check if a number is divisible by 3?
-
-### Homework
-
-Create number-tasks.js. Using loops:
-
-Print the times table of 8.
-Print all odd numbers from 1 to 50.
-Print numbers from 20 down to 1.
-Calculate and print the sum of all numbers from 1 to 50.
-Print a countdown from 10 to 1 then print "Blast off".
-Use a while loop to keep doubling the number 1 until it goes above 1000, printing each step.
-
 ---
 
-# PART 3 — What We Learned Today
+## Checking Divisibility
 
-## for Loop
+The remainder operator is useful in loops for checking divisibility.
 
 ```javascript
-for (let i = 1; i <= 5; i++) {
-    console.log(i)
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+        console.log(`${i} is even`)
+    }
 }
 ```
 
-Three parts: start, condition, update. Use when you know how many times.
+A number is even if it divides by 2 with no remainder. It is divisible by any number if the remainder is 0.
 
-## while Loop
+---
+
+## Quick Reference
 
 ```javascript
+// for loop
+for (let i = 1; i <= 5; i++) {
+    console.log(i)
+}
+
+// while loop
 let count = 1
 while (count <= 5) {
     console.log(count)
     count++
 }
-```
 
-Use when you do not know how many times. Always update the counter.
+// break stops the loop
+// continue skips one round
 
-## break and continue
-
-```javascript
-break      // stop the whole loop
-continue   // skip this round, keep going
-```
-
-## for of (preview, arrays taught later)
-
-```javascript
+// for of, goes through a list
 for (const item of list) {
     console.log(item)
 }
-```
 
-Goes through each item in a list. Full array lesson comes soon.
-
-## Divisibility Check
-
-```javascript
+// divisibility
 if (number % 2 === 0) { }   // even
-if (number % 3 === 0) { }   // divisible by 3
 ```
+
+for loop when you know how many times. while loop when you do not. Always make sure a while loop can end.
 
 ---
 
-# PART 4 — After Class Notes
+# Exercises
 
-1. Did the for loop three parts make sense?
-2. Did anyone create an infinite loop? Good lesson if so.
-3. Was FizzBuzz solved by both?
-4. Did they understand for of is a preview of arrays?
-5. What to revise before Functions?
+Copy the block below into a .js file and write your code under each exercise.
+
+```javascript
+// -------------------------------------------------------
+// Exercise 1
+// -------------------------------------------------------
+// Use a for loop to print numbers from 1 to 20.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 2
+// -------------------------------------------------------
+// Use a for loop to print numbers from 20 down to 1.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 3
+// -------------------------------------------------------
+// Print the multiplication table of any number from 1 to 10 using a for loop and template literals.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 4
+// -------------------------------------------------------
+// Use a for loop to print all even numbers from 1 to 50.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 5
+// -------------------------------------------------------
+// Use a for loop to calculate and print the sum of all numbers from 1 to 100.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 6
+// -------------------------------------------------------
+// Use a while loop to print a countdown from 10 to 1, then print "Blast off".
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 7
+// -------------------------------------------------------
+// Use a while loop that starts at 1 and keeps doubling the number, printing each step, until it goes above 1000.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 8
+// -------------------------------------------------------
+// Use a loop with break. Print numbers starting from 1, but stop the loop as soon as you reach 7.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 9
+// -------------------------------------------------------
+// Use a loop with continue. Print numbers from 1 to 15 but skip every multiple of 3.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 10
+// -------------------------------------------------------
+// Write FizzBuzz. Print numbers 1 to 30. For multiples of 3 print Fizz, for multiples of 5 print Buzz, for multiples of both print FizzBuzz, otherwise print the number.
+
+// Write your code here
+
+
+```

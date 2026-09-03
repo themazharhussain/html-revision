@@ -1,64 +1,12 @@
-# JavaScript — Truthy Falsy and Template Literals
+# Truthy Falsy and Template Literals
 
-**Duration:** 3 hours
-**Roadmap position:** Day 5
-**Today's goal:** Students master truthy and falsy values and build clean strings using template literals.
+Every value in JavaScript is either truthy or falsy when used in a condition. Template literals are the modern way to build strings with variables inside them.
 
 ---
 
-# PART 1 — Your Preparation (Night Before)
+## Falsy Values
 
-**Practice this yourself:**
-
-```javascript
-const name = "Ahmed"
-const age = 25
-console.log(`My name is ${name} and I am ${age}`)
-
-if ("") console.log("runs")     // does not run, empty string is falsy
-if ("hi") console.log("runs")   // runs, non empty is truthy
-```
-
-**Things you must know clearly:**
-
-Falsy values, only six:
-
-```javascript
-false, 0, "", null, undefined, NaN
-```
-
-Everything else is truthy, including "0", [], {}, and negative numbers.
-
-Template literals use backticks and ${ }:
-
-```javascript
-`Total is ${price * quantity}`
-```
-
-**Questions students will ask — your answers:**
-
-"Is an empty array truthy or falsy?"
-Truthy. This surprises people. Empty array [] and empty object {} are both truthy. Only the six specific falsy values are falsy. Everything else is truthy.
-
-"Why do we care about truthy and falsy?"
-Because conditions use them. When you write if something, JavaScript checks if that value is truthy or falsy. Understanding this lets you write shorter cleaner conditions.
-
-"What is the difference between backticks and normal quotes?"
-Normal quotes make plain strings. Backticks make template literals which let you insert variables and do calculations inside using ${ }. Backticks are more powerful.
-
----
-
-# PART 2 — The Class
-
-## Step 1 — Homework Check (10 minutes)
-
-Check delivery.js. Premium discount working? Tested both cases? One good thing, one improve.
-
-## Step 2 — Truthy and Falsy (35 minutes)
-
-Every value in JavaScript is either truthy or falsy when used in a condition.
-
-The six falsy values, write on paper:
+There are exactly six falsy values. These are treated as false in a condition.
 
 ```javascript
 false
@@ -69,9 +17,7 @@ undefined
 NaN
 ```
 
-Say: "Memorize these six. These are the only falsy values. Everything else in JavaScript is truthy."
-
-Show it:
+Memorize these six. They are the only falsy values. Everything else in JavaScript is truthy.
 
 ```javascript
 if (0) console.log("A")           // does not run
@@ -82,18 +28,26 @@ if (null) console.log("E")        // does not run
 if (undefined) console.log("F")   // does not run
 ```
 
-The surprising ones:
+---
+
+## The Surprising Truthy Values
+
+Some values look empty but are actually truthy.
 
 ```javascript
-if ([]) console.log("empty array")    // runs! arrays are truthy
-if ({}) console.log("empty object")   // runs! objects are truthy
-if ("0") console.log("string zero")   // runs! non empty string is truthy
-if (-5) console.log("negative")       // runs! only 0 is falsy
+if ([]) console.log("empty array")    // runs, arrays are truthy
+if ({}) console.log("empty object")   // runs, objects are truthy
+if ("0") console.log("string zero")   // runs, non empty string is truthy
+if (-5) console.log("negative")       // runs, only 0 is falsy
 ```
 
-Say: "This surprises everyone. An empty array is truthy. The string zero is truthy because it is not empty. Only the actual number 0 is falsy. Remember the six falsy values and you will never be confused."
+This surprises everyone. An empty array is truthy. The string zero is truthy because it is not empty. A negative number is truthy because only the actual number zero is falsy. Remember the six falsy values and you will never be confused.
 
-Practical use, checking if something has a value:
+---
+
+## Using Truthy and Falsy
+
+You can check if a value exists directly in a condition.
 
 ```javascript
 const userName = ""
@@ -105,7 +59,9 @@ if (userName) {
 }
 ```
 
-Checking a number value:
+Because an empty string is falsy, the else branch runs. This is a clean way to check if a user actually typed something.
+
+You can check a number the same way.
 
 ```javascript
 const itemCount = 0
@@ -117,11 +73,11 @@ if (itemCount) {
 }
 ```
 
-Say: "Because 0 is falsy, we can check a count directly. If the count is 0 it is falsy and the else runs. If the count is any other number it is truthy."
+---
 
-## Step 3 — Template Literals (35 minutes)
+## Template Literals
 
-The old way, messy:
+Before template literals, joining text and variables was messy.
 
 ```javascript
 const name = "Ahmed"
@@ -129,31 +85,50 @@ const age = 25
 console.log("My name is " + name + " and I am " + age + " years old")
 ```
 
-The new way, clean:
+Template literals make this clean. Use backticks, the key above Tab, and put variables inside a dollar sign and curly braces.
 
 ```javascript
+const name = "Ahmed"
+const age = 25
 console.log(`My name is ${name} and I am ${age} years old`)
 ```
 
-Explain: use backticks, the key above Tab. Put variables inside ${ }.
+---
 
-Calculations inside:
+## Calculations Inside Template Literals
+
+You can put any calculation inside the curly braces.
 
 ```javascript
 const price = 1000
 const quantity = 3
+
 console.log(`Total: Rs ${price * quantity}`)
 console.log(`With tax: Rs ${price * quantity * 1.17}`)
+console.log(`In 10 years I will be ${age + 10}`)
 ```
 
-Conditions inside using ternary:
+---
+
+## Conditions Inside Template Literals
+
+You can use a ternary condition inside a template literal. A ternary is a short if else written as condition ? valueIfTrue : valueIfFalse.
 
 ```javascript
 const items = 1
 console.log(`You have ${items} ${items === 1 ? "item" : "items"}`)
+// You have 1 item
+
+const items2 = 5
+console.log(`You have ${items2} ${items2 === 1 ? "item" : "items"}`)
+// You have 5 items
 ```
 
-Multi line strings:
+---
+
+## Multi Line Strings
+
+Template literals can span multiple lines. Normal quotes cannot do this.
 
 ```javascript
 const message = `
@@ -164,13 +139,11 @@ Your order is confirmed.
 console.log(message)
 ```
 
-Say: "Template literals are the modern standard. Always use them instead of joining with plus signs. Cleaner, easier, fewer mistakes."
+---
 
-## BREAK (10 minutes)
+## Combining Everything
 
-## Step 4 — Combining Both (20 minutes)
-
-Real example using truthy falsy and template literals together:
+A real example using truthy checks and template literals together.
 
 ```javascript
 const userName = "Ahmed"
@@ -179,108 +152,120 @@ const discount = 0
 
 const greeting = userName ? `Welcome ${userName}` : "Welcome Guest"
 const cartMessage = cartItems ? `You have ${cartItems} items` : "Cart is empty"
-const discountMessage = discount ? `Discount: ${discount}%` : "No discount applied"
+const discountMessage = discount ? `Discount: ${discount}%` : "No discount"
 
 console.log(greeting)
 console.log(cartMessage)
 console.log(discountMessage)
 ```
 
-Say: "See how truthy falsy checks combine with template literals. If userName has a value it is truthy, show the name. If discount is 0 it is falsy, show no discount. This is real code you will write constantly."
-
-## Step 5 — Student Exercises (35 minutes)
-
-### Exercise 1 — Falsy Detective (15 minutes)
-
-Predict truthy or falsy for each, then check with if:
-
-```javascript
-0
-""
-"0"
-" "        // space, careful
-[]
-{}
-null
-undefined
-NaN
--1
-"false"
-false
-```
-
-### Exercise 2 — Profile Card (20 minutes)
-
-```javascript
-const name = "Ahmed Khan"
-const age = 25
-const city = "Lahore"
-const job = "Web Developer"
-const salary = 80000
-
-// Build a profile card using template literals
-// Print a multi line card showing all details
-// Include a calculation like yearly salary
-// Use a ternary to show "Adult" or "Minor" based on age
-```
-
-## Step 6 — Review (10 minutes)
-
-Check profile card. Template literals used? Calculations correct? One good thing, one improve.
-
-## Step 7 — Quiz and Homework (10 minutes)
-
-### Quiz
-
-1. Name the six falsy values.
-2. Is an empty array truthy or falsy?
-3. Is the string "0" truthy or falsy? Why?
-4. What symbols do template literals use?
-5. How do you put a calculation inside a template literal?
-
-### Homework
-
-Create receipt.js. Build a shopping receipt using template literals. Include shop name, date, at least 3 items with prices, subtotal, tax, total. Use a ternary to show "Free delivery" if total is above 2000, otherwise show the delivery fee. Make it look like a real receipt with multi line template literals.
+If userName has a value it is truthy, so it shows the name. If discount is 0 it is falsy, so it shows no discount.
 
 ---
 
-# PART 3 — What We Learned Today
-
-## Falsy Values
+## Quick Reference
 
 ```javascript
+// Six falsy values
 false, 0, "", null, undefined, NaN
-```
 
-Everything else is truthy, including [], {}, "0", negative numbers.
+// Everything else is truthy, including [], {}, "0", negatives
 
-## Truthy Falsy in Conditions
+// Truthy check
+if (userName) { }     // runs if it has a value
 
-```javascript
-if (userName) { }    // runs if userName has a value
-if (itemCount) { }   // runs if itemCount is not 0
-```
+// Template literals
+`Hello ${name}, total is ${price * quantity}`
 
-## Template Literals
-
-```javascript
-const name = "Ahmed"
-console.log(`Hello ${name}, total is ${price * quantity}`)
-```
-
-Use backticks. Insert variables and calculations with ${ }.
-
-## Ternary Inside Template Literals
-
-```javascript
+// Ternary inside
 `You have ${count} ${count === 1 ? "item" : "items"}`
 ```
 
 ---
 
-# PART 4 — After Class Notes
+# Exercises
 
-1. Did the six falsy values stick?
-2. Did the empty array is truthy surprise them?
-3. Are template literals natural now?
-4. What to revise next?
+Copy the block below into a .js file and write your code under each exercise.
+
+```javascript
+// -------------------------------------------------------
+// Exercise 1
+// -------------------------------------------------------
+// Test each of these six values in an if condition and note which ones do not run: false, 0, "", null, undefined, NaN.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 2
+// -------------------------------------------------------
+// Test these values in an if condition and note which ones run: [], {}, "0", -1, "false". Explain why in comments.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 3
+// -------------------------------------------------------
+// Create a variable for a user name. Write an if condition that greets the user if the name has a value, or asks them to enter a name if it is empty. Test with a real name and with an empty string.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 4
+// -------------------------------------------------------
+// Rewrite this using a template literal: "Hello " + name + ", you are " + age + " years old".
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 5
+// -------------------------------------------------------
+// Create price and quantity variables. Use a template literal to print the total, including the calculation inside the braces.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 6
+// -------------------------------------------------------
+// Use a ternary inside a template literal to print how many messages a user has, choosing between "message" and "messages" based on the count.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 7
+// -------------------------------------------------------
+// Create a multi line template literal that prints a short welcome note with three lines: a greeting, a line about the user, and a closing line.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 8
+// -------------------------------------------------------
+// Create variables for a user name, a cart item count, and a discount. Use truthy checks and template literals to print a greeting, a cart message, and a discount message.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 9
+// -------------------------------------------------------
+// Build a small receipt using template literals. Include a shop name, three items with prices, and a total. Make it look clean with multiple lines.
+
+// Write your code here
+
+
+// -------------------------------------------------------
+// Exercise 10
+// -------------------------------------------------------
+// Create a variable for a score. Use a ternary inside a template literal to print "You passed" if the score is 50 or more, otherwise "You failed", along with the actual score.
+
+// Write your code here
+
+
+```
