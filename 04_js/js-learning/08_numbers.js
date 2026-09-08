@@ -9,13 +9,15 @@ const whole = 42
 const decimal = 3.14
 const negative = -10
 
-console.log(whole + decimal) // 45.14
-console.log(typeof whole) // "number"
+//console.log(whole + decimal) // 45.14
+//console.log(typeof whole) // "number"
 
-console.log(10 / 0) // Infinity
-console.log(-10 / 0) // -Infinity
-console.log(0 / 0) // NaN
-console.log("abc" * 2) // NaN
+//console.log(10 / 0) // Infinity
+//console.log(-10 / 0) // -Infinity
+//console.log(0 / 0) // NaN
+
+//console.log("ab" * 2)
+//console.log(typeof ("2" * "2")) // Type of NaN is number in js
 
 // NaN means Not a Number.
 // It appears when a math operation fails.
@@ -27,52 +29,54 @@ console.log("abc" * 2) // NaN
 
 const price = 3.14159
 
-console.log(price.toFixed(2)) // "3.14"
-console.log(price.toFixed(0)) // "3"
-console.log(price.toFixed(4)) // "3.1416"
+//console.log(price.toFixed(2)) // "3.14"
+
+// console.log(price.toFixed(0)) // "3"
+// console.log(price.toFixed(4)) // "3.1416"
 
 
-console.log(Number.isInteger(42)) // true
-console.log(Number.isInteger(3.14)) // false
-console.log(Number.isNaN(NaN)) // true
-console.log(Number.isNaN(42)) // false
+// console.log(Number.isInteger(42)) // true
+// console.log(Number.isInteger(3.14)) // false
+// console.log(Number.isNaN(NaN)) // true
+// console.log(Number.isNaN(42)) // false
 
 
 // The Math object holds many useful tools.
 // You do not create it, you just use it.
 
-console.log(Math.round(4.5)) // 5, nearest
-console.log(Math.round(4.4)) // 4, nearest
-console.log(Math.floor(4.9)) // 4, always down
-console.log(Math.ceil(4.1)) // 5, always up
-console.log(Math.trunc(4.9)) // 4, just removes the decimal
+//console.log(Math.round(4.56)) // 5, nearest
+// console.log(Math.round(4.4)) // 4, nearest
+//console.log(Math.floor(4.9)) // 4, always down
+//console.log(Math.ceil(4.1)) // 5, always up
+// console.log(Math.trunc(4.9)) // 4, just removes the decimal
 
 // round goes to the nearest whole number.
 // floor always goes down, like the floor of a room.
 // ceil always goes up, like the ceiling.
 
 
-console.log(Math.abs(-5)) // 5, absolute value
-console.log(Math.max(1, 5, 3)) // 5, biggest
-console.log(Math.min(1, 5, 3)) // 1, smallest
-console.log(Math.pow(2, 10)) // 1024, power
-console.log(Math.sqrt(16)) // 4, square root
-console.log(Math.PI) // 3.14159...
+// console.log(Math.abs(-5)) // 5, absolute value
+// console.log(Math.max(1, 5, 3)) // 5, biggest
+// console.log(Math.min(1, 5, 3)) // 1, smallest
+// console.log(Math.pow(2, 10)) // 1024, power
+// console.log(Math.sqrt(16)) // 4, square root
+//console.log(Math.PI) // 3.14159...
 
 
 // Random Numbers
 
 // Math.random gives a random decimal from 0 up to almost 1.
 
-console.log(Math.random()) // 0.3728... different every time
+//console.log(Math.random()) // 0.3728... different every time
 
 
 // To get a whole number in a range, use this formula.
 
 // Random number between 1 and 10
+//0.0062192611001331555
 const random = Math.floor(Math.random() * 10) + 1
 
-console.log(random)
+//sconsole.log(random)
 
 // Step by step:
 // Math.random gives 0 to almost 1.
@@ -86,9 +90,11 @@ console.log(random)
 
 // A dice roll.
 
-const dice = Math.floor(Math.random() * 6) + 1
+//console.log(Math.trunc((Math.random() * 20) + 1))
 
-console.log(`You rolled a ${dice}`)
+const dice = Math.floor(Math.random() * 6)
+
+//console.log(`You rolled a ${dice}`)
 
 // This random formula is used in games, quizzes,
 // and anywhere you need randomness.
@@ -100,8 +106,8 @@ console.log(`You rolled a ${dice}`)
 
 // Some decimals cannot be stored perfectly by a computer.
 
-console.log(0.1 + 0.2) // 0.30000000000000004
-console.log(0.1 + 0.2 === 0.3) // false
+//console.log(0.1 + 0.2) // 0.30000000000000004
+//console.log(0.1 + 0.2 === 0.3) // false
 
 // This looks like a bug but it is not.
 // It happens in most programming languages because computers
@@ -110,9 +116,9 @@ console.log(0.1 + 0.2 === 0.3) // false
 // For money and important decimals, use toFixed to fix it.
 
 const result = 0.1 + 0.2
-
+console.log(result)
 console.log(result.toFixed(2)) // "0.30"
-console.log(Number(result.toFixed(2))) // 0.3 as a number
+// console.log(Number(result.toFixed(2))) // 0.3 as a number
 
 
 // -------------------------------------------------------
@@ -121,26 +127,26 @@ console.log(Number(result.toFixed(2))) // 0.3 as a number
 
 // number methods
 
-console.log((3.14159).toFixed(2)) // "3.14"
+// console.log((3.14159).toFixed(2)) // "3.14"
 
-console.log(Number.isInteger(42)) // true
-console.log(Number.isNaN(NaN)) // true
+// console.log(Number.isInteger(42)) // true
+// console.log(Number.isNaN(NaN)) // true
 
 
 // rounding
 
-console.log(Math.round(4.5)) // 5, nearest
-console.log(Math.floor(4.9)) // 4, down
-console.log(Math.ceil(4.1)) // 5, up
+// console.log(Math.round(4.5)) // 5, nearest
+// console.log(Math.floor(4.9)) // 4, down
+// console.log(Math.ceil(4.1)) // 5, up
 
 
 // math tools
 
-console.log(Math.abs(-5)) // 5
-console.log(Math.max(1, 5, 3)) // 5
-console.log(Math.min(1, 5, 3)) // 1
-console.log(Math.pow(2, 10)) // 1024
-console.log(Math.sqrt(16)) // 4
+// console.log(Math.abs(-5)) // 5
+// console.log(Math.max(1, 5, 3)) // 5
+// console.log(Math.min(1, 5, 3)) // 1
+// console.log(Math.pow(2, 10)) // 1024
+// console.log(Math.sqrt(16)) // 4
 
 
 // random in a range
@@ -150,7 +156,10 @@ console.log(Math.sqrt(16)) // 4
 
 // floating point fix
 
-console.log((0.1 + 0.2).toFixed(2)) // "0.30"
+//console.log((0.1 + 0.2).toFixed(2)) // "0.30"
+
+
+// Practice all numbers methods mentioned above
 
 
 // =======================================================
@@ -164,7 +173,7 @@ console.log((0.1 + 0.2).toFixed(2)) // "0.30"
 // -------------------------------------------------------
 // Exercise 1
 // -------------------------------------------------------
-
+const decimalNmber = 10.25
 // Create a decimal number.
 // Print it rounded to the nearest whole number,
 // rounded up, and rounded down.
@@ -253,6 +262,11 @@ console.log((0.1 + 0.2).toFixed(2)) // "0.30"
 
 // Write your code here
 
+function randomBetween(min, max) {
+
+}
+
+randomBetween(5, 10)
 
 
 // -------------------------------------------------------
