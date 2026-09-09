@@ -47,7 +47,7 @@ str.slice(-5)         // last 5 characters
 str.replaceAll("a", "b")  // all matches
 
 
-//console.log(str.split(""))            // into a array
+//console.log(str.split(""))            // convert string to array
 
 const numberString = "6"
 //console.log(numberString.padStart(4, "0"))  // 0006
