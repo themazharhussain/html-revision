@@ -4,6 +4,7 @@
 // An array is a list of values stored in a single variable.
 // Instead of making a separate variable for each value, you
 // keep them all together in one place, in order.
+// In array, numbered indices are used
 
 
 // -------------------------------------------------------
