@@ -92,10 +92,13 @@ console.log(person.city)   // Lahore
 // the key is stored in a variable.
 
 
-const person = {
-    name: "Ahmed",
-    age: 25
-}
+const person = {}
+person.name = "John"
+person.age = 25
+
+
+
+console.log(person) // {name: "John",age: 25}
 
 console.log(person["name"])   // Ahmed
 
