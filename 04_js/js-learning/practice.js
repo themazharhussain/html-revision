@@ -211,18 +211,133 @@ const car = {
 
 // console.log(filterArray)
 
-const numbers = [1, 2, 3, 5, 0, 8]
+// const numbers = [1, 2, 3, 5, 0, 8]
 
-// const biggestNumber = numbers.find((item) => {
-//     return item > 3
+// // const biggestNumber = numbers.find((item) => {
+// //     return item > 3
+// // })
+// // const biggestNumber = numbers.find((item) => item > 3)
+
+// const biggestNumber = numbers.find(item => item > 3)
+
+// // const biggestNumber = numbers.find(function (item) {
+// //     return item > 3
+// // })
+
+
+// //console.log(biggestNumber)
+
+// const numbers = [1, 2, 3]
+
+// const sum = numbers.reduce((acc, number) => {
+//     console.log("acc", acc)
+//     console.log("number", number)
+//     return acc + number
+// }, 0)
+
+// console.log(sum)
+
+// array of object
+// const cart = [
+//     {
+//         id: 1,
+//         name: "school bag",
+//         pricePerUnit: 500,
+//         quantity: 2,
+//     },
+//     {
+//         id: 2,
+//         name: "Water bottle",
+//         pricePerUnit: 600,
+//         quantity: 1,
+//     }
+// ]
+
+// const cartTotalPrice = cart.reduce((acc, item) => {
+//     const total = acc + item.pricePerUnit * item.quantity
+//     return total
+// }, 0)
+
+// function increment(item) {
+//     return ++item.quantity
+// }
+
+// function decrement(item) {
+//     if (item.quantity === 1) return
+//     return --item.quantity
+// }
+
+// increment({
+//     id: 1,
+//     name: "school bag",
+//     pricePerUnit: 500,
+//     quantity: 2,
 // })
-// const biggestNumber = numbers.find((item) => item > 3)
 
-const biggestNumber = numbers.find(item => item > 3)
+// console.log(cartTotalPrice)
 
-// const biggestNumber = numbers.find(function (item) {
-//     return item > 3
-// })
+// [
+//     {
+//         "id": "everyday-68dab7fd2d72fc85e6172773-12",
+//         "type": "everyday",
+//         "planKey": "unlimited",
+//         "planLabel": "Unlimited",
+//         "contractKey": "12",
+//         "contractLabel": "12 months",
+//         "pricePerUnit": 21.5,
+//         "quantity": 1,
+//         "destination": "United Kingdom",
+//         "destinationFlag": "gb",
+//         "isRecurring": true,
+//         "tariffId": "68dab7fd2d72fc85e6172773",
+//         "contractMonths": 12
+//     },
+//     {
+//         "id": "travel-ES-1gb-7d",
+//         "type": "travel",
+//         "planLabel": "1GB",
+//         "pricePerUnit": 2.96,
+//         "quantity": 2,
+//         "destination": "Spain",
+//         "destinationFlag": "🇪🇸",
+//         "durationLabel": "7 days",
+//         "isRecurring": false,
+//         "travelMeta": {
+//             "esimfx_product_id": "f6d95c2a-88e7-4e52-950d-f4b90cb3bf13",
+//             "country_code": "ES",
+//             "country_name": "Spain",
+//             "duration_days": 7,
+//             "data_amount_gb": 1,
+//             "is_unlimited": false,
+//             "price_gbp": 2.96
+//         }
+//     }
+// ]
+
+// const studentNames = ["Mishal", "Amber", "Faiqa", "Hadeeqa"]
+
+// const sortedNameAc = studentNames.sort()
+// console.log(sortedNameAc)
+// const sortedNameDec = sortedNameAc.reverse()
+// console.log(sortedNameDec)
+
+// console.log(studentNames)
 
 
-console.log(biggestNumber)
+
+// const numbers = [10, 2, 5]
+
+// //const sortedNumbers = numbers.sort((a, b) => a - b) // ascending order
+// const sortedNumbers = numbers.sort((a, b) => b - a) // descending order
+
+// console.log(sortedNumbers)
+
+// const numbers = [10, 2, 5]
+
+// console.log(numbers.some(number => number === 3))
+
+const numbers8 = [1, 4, 6, 8]
+
+const isTestPassed = numbers8.every(item => item % 2 === 0)
+
+console.log(isTestPassed)
