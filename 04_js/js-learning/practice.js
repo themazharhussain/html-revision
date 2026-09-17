@@ -336,8 +336,108 @@ const car = {
 
 // console.log(numbers.some(number => number === 3))
 
-const numbers8 = [1, 4, 6, 8]
+// const numbers8 = [1, 4, 6, 8]
 
-const isTestPassed = numbers8.every(item => item % 2 === 0)
+// const isTestPassed = numbers8.every(item => item % 2 === 0)
 
-console.log(isTestPassed)
+// console.log(isTestPassed)
+
+const person = {
+    first_name: "Ahmed",
+    second_name: "Ali",
+    age: 25,
+    city: "Lahore"
+}
+
+//const keys = []
+const values = []
+
+// console.log(person.name)
+// console.log(person["name"])
+
+for (const key in person) {
+    // keys.push(key)
+    values.push(person[key])
+    // console.log(`${key}: ${person[key]}`)
+}
+
+//console.log(keys)
+//console.log(values)
+// name
+// age
+// city
+// let fullName = ""
+// const valuess = Object.keys(person).filter(item => item === "first_name" || item === "second_name")
+
+// const firstName = valuess.map(item => {
+//     console.log(item)
+//     return `person[item]`
+// })
+
+// console.log(firstName)
+
+const marks = {
+    math: 85,
+    science: 90,
+    english: 78
+}
+
+// let total = 0;
+
+// for (const sub in marks) {
+//     total += marks[sub]
+// }
+
+// console.log(total)
+
+// const totalMarks = Object.values(marks).reduce((total, item) => {
+//     return total + item
+// }, 0)
+
+function getAverage(marks) {
+    const totalMarks = Object.values(marks).reduce((total, item) => {
+        return total + item
+    }, 0)
+
+    return totalMarks / Object.values(marks).length
+
+
+}
+// console.log(getAverage(marks))
+
+const person2 = {
+    first_name: "Ahmed",
+    second_name: "Ali",
+    age: 25,
+    city: "Lahore"
+}
+
+Object.entries(person).forEach((entry) => {
+    //console.log(entry)
+    const entryKey = entry[0]
+    const entryValue = entry[1]
+    //console.log(`${entryKey}: ${entryValue}`)
+})
+
+const products = [
+    { id: 1, name: "Laptop", price: 80000, inStock: true },
+    { id: 2, name: "Phone", price: 50000, inStock: false },
+    { id: 3, name: "Tablet", price: 60000, inStock: true }
+]
+
+const productNames = products.map(item => item.name)
+const totalPrice = products.reduce((total, item) => total + item.price, 0)
+const inStockProducts = products.filter(item => item.inStock === true)
+//console.log(inStockProducts)
+
+const person3 = { ...person2 }
+person3.first_name = "Aslam"
+
+// console.log(person2)
+// console.log(person3)
+
+const names = ["ALi", "Akram"]
+const names2 = [...names]
+names2[0] = "Aslam"
+// console.log(names)
+// console.log(names2)
