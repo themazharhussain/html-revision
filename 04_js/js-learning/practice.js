@@ -441,3 +441,41 @@ const names2 = [...names]
 names2[0] = "Aslam"
 // console.log(names)
 // console.log(names2)
+
+const now = new Date();
+
+// console.log(now);
+// console.log(now.toString());
+// console.log(now.toISOString());
+
+const birthday = new Date("2000-05-15")
+//console.log(birthday.toString())
+
+const now2 = new Date();
+//console.log(now2.getFullYear())
+//console.log(now2.getDate())
+//console.log(now2.getMonth() + 1)
+// console.log(now2.getHours() + 1)
+// console.log(now2.getDay())
+// 0 sunday
+// 1 monday
+// 2 tuesday
+// 3 wednesday
+// console.log(now2.toLocaleDateString())
+// console.log(now2.toLocaleTimeString())
+
+// console.log(now2.toLocaleString()) 
+
+const now3 = new Date()
+//January 1, 1970
+//console.log(now3.getTime())
+// if (now3.getTime() === Date.now()) {
+//     console.log("we are in if condition")
+// }
+
+const start = new Date("2026-09-10")
+const end = new Date("2026-09-18")
+const millisecondsToDay = 1000 * 60 * 60 * 24
+const differenceInMilliseconds = end.getTime() - start.getTime()
+const differenceInDays = differenceInMilliseconds / millisecondsToDay
+console.log(differenceInDays)
