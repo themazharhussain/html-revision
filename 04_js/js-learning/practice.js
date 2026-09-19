@@ -478,4 +478,90 @@ const end = new Date("2026-09-18")
 const millisecondsToDay = 1000 * 60 * 60 * 24
 const differenceInMilliseconds = end.getTime() - start.getTime()
 const differenceInDays = differenceInMilliseconds / millisecondsToDay
-console.log(differenceInDays)
+//console.log(differenceInDays)
+
+const birthDate = new Date("2008-10-23")
+
+//console.log(birthDate.toDateString())
+
+
+const person4 = {
+    first_name: "Ahmed",
+    second_name: "Ali",
+    age: 25,
+}
+
+//const firstName = person3.first_name
+
+// const { first_name: firstName, second_name, age } = person4
+// console.log(firstName)
+
+
+// const { first_name: firstName, second_name, age, city = "Lahore" } = person4
+
+// console.log(city)
+
+function printObject({ first_name = "", age }) {
+
+    // console.log(first_name)
+}
+
+//printObject(person4)
+
+const person5 = {
+    first_name: "Ahmed",
+    second_name: "Ali",
+    age: 25,
+}
+
+const { first_name: name } = person5
+//console.log(first_name)// Now it throw errors since we have rename the first_name
+
+const products1 = [
+    { name: "Laptop", price: 80000 },
+    { name: "Phone", price: 50000 }
+]
+
+//products1.forEach(({ name, price }) => console.log(name, price))
+
+const original1 = [1, 2, 3]
+const original2 = [4, 10, 8]
+
+const copy = [...original1, ...original2]
+//console.log(copy)
+
+const copy2 = [10, ...original1, 4]
+//console.log(copy2)
+
+
+const person6 = {
+    first_name: "Ahmed",
+    second_name: "Ali",
+    age: 25,
+}
+
+const person7 = {
+    city: "Lahore"
+}
+
+const copy4 = { ...person6, ...person7 }
+
+const copy3 = { ...person6, city: "Lahore" }
+
+const { first_name, city } = copy3
+
+//console.log(first_name, city)
+
+//console.log(copy4)
+
+const numbers2 = [5, 2, 8, 1, 9]
+
+// console.log(Math.max(...numbers2))   // 9
+// console.log(Math.min(...numbers2))   // 1
+
+function checkMaxNumber(number1, number2) {
+    console.log(values)
+}
+const numbers3 = [5, 2]
+
+checkMaxNumber(...numbers3)
