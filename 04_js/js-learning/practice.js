@@ -538,6 +538,7 @@ const person6 = {
     first_name: "Ahmed",
     second_name: "Ali",
     age: 25,
+    showData: function () { }
 }
 
 const person7 = {
@@ -559,9 +560,89 @@ const numbers2 = [5, 2, 8, 1, 9]
 // console.log(Math.max(...numbers2))   // 9
 // console.log(Math.min(...numbers2))   // 1
 
-function checkMaxNumber(number1, number2) {
-    console.log(values)
-}
-const numbers3 = [5, 2]
+// function checkMaxNumber(number1, number2) {
+//     console.log(values)
+// }
+// const numbers3 = [5, 2]
 
-checkMaxNumber(...numbers3)
+// checkMaxNumber(...numbers3)
+
+function sumNumbers(...number) {
+    return number.reduce((acc, item) => acc + item, 0)
+}
+
+//console.log(sumNumbers(10, 2, 50, 100, 200))
+
+// function introduce(first, second, ...others) {
+//     console.log(`First: ${first}`)
+//     console.log(`Second: ${second}`)
+//     console.log(`Others: ${others}`)
+// }
+
+// introduce("Ahmed", "Sara", "Ali", "Hassan", "Fatima")
+
+
+const numbers3 = [1, 2, 3, 4, 5]
+
+const [first2, second2, ...rest1] = numbers3
+
+//console.log(second2)
+
+
+
+// function displayJson() {
+//     return fetch('https://fakestoreapi.com/products/1')
+//         .then(res => res.json())
+//         .then(json => console.log(json))
+// }
+
+// displayJson()
+
+const person10 = {
+    name: "Ahmed",
+    age: 25,
+    city: "Lahore"
+}
+// convert plain js object to json string
+// When you are sending data to server
+const json2 = JSON.stringify(person10)
+
+//console.log(json2)
+
+const plainObject = JSON.parse(json2)
+
+//console.log(plainObject)
+
+
+
+// const person11 = '{ "name": "Ahmed", "age": 25, "city": "Lahore" }'
+
+// const object1 = JSON.parse(person11)
+
+// console.log(object1)
+
+//console.log("Aslam is goood boy")
+
+
+const person12 = {
+    name: "Ahmed",
+    address: {
+        city: "Lahore",
+        country: {
+            countryCode: "pk",
+            flag: "White"
+        }
+    }
+}
+//To make real deep copy
+const person14 = JSON.parse(JSON.stringify(person12))
+
+//const person13 = { ...person12 }
+
+
+//person13.name = "Amber"
+person14.address.city = "Karachi"
+person14.address.country.countryCode = "US"
+
+console.log(person12)
+console.log(person14)
