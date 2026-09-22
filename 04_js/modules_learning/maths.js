@@ -35,4 +35,12 @@ function divide(a, b) {
     return a / b
 }
 
-export { add, subtractNumbers, divide }
+function toUpperCase(sentence = "") {
+    return sentence.toUpperCase()
+}
+
+function convertDate(dateObject) {
+    return `${dateObject.getDate()}/${dateObject.getMonth() + 1}/${dateObject.getFullYear()}`
+}
+
+export { add, subtractNumbers, divide, toUpperCase, convertDate }

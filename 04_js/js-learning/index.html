@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dom learning</title>
 </head>
 <body>
-  
-<script src=""></script> 
+  <div id="container">
+    <h1 class="heading">Hello</h1>
+    <button class="btn">first button</button>
+     <button class="btn">second button</button>
+  </div>
+  <script>
+    const parentDiv = document.getElementById("container")
+    const h1 = document.querySelector(".heading")
+    const buttons = document.querySelectorAll(".btn")// Node list looks like array but does not array
+    h1.textContent = "This is new title"
+   // console.log(h1)
+    //console.log(parentDiv)
+    console.log(buttons)
+ //  buttons.forEach(button=>console.log(button))
+
+  </script>
 </body>
 </html>
