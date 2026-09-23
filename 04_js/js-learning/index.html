@@ -1,26 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Dom learning</title>
-</head>
-<body>
-  <div id="container">
-    <h1 class="heading">Hello</h1>
-    <button class="btn">first button</button>
-     <button class="btn">second button</button>
-  </div>
-  <script>
-    const parentDiv = document.getElementById("container")
-    const h1 = document.querySelector(".heading")
-    const buttons = document.querySelectorAll(".btn")// Node list looks like array but does not array
-    h1.textContent = "This is new title"
-   // console.log(h1)
-    //console.log(parentDiv)
-    console.log(buttons)
- //  buttons.forEach(button=>console.log(button))
+    <style>
+      button {
+        background-color: red;
+        font-size: medium;
+        font-weight: 600;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        color: white;
+      }
 
-  </script>
-</body>
+      .card{
+        background-color: blue;
+        color: white;
+        width: 200px;
+        height: auto;
+        border-radius: 10px;
+        padding:20px;
+        margin:10px
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="heading">Hello</h1>
+      <button
+        id="first-button"
+        class="btn btn-primary"
+        type="submit"
+      >
+        first button
+      </button>
+
+      <!-- <button class="btn">second button</button>
+    <input id="username" value="Aslam" /> -->
+    </div>
+    <script>
+      const parentDiv =
+        document.getElementById("container");
+      const h1 = document.querySelector(".heading");
+      const buttons = document.querySelectorAll(".btn"); // Node list looks like array but does not array
+      h1.textContent = "This is new title";
+      // console.log(h1)
+      //console.log(parentDiv)
+      //console.log(buttons)
+      //  buttons.forEach(button=>console.log(button))
+
+      // console.log(document.querySelector("div").innerHTML)
+
+      const username = document.getElementById("username");
+      //console.log(username.value)
+      const button = document.querySelector("button");
+      button.style.backgroundColor = "blue";
+      //console.log(firstButton.getAttribute("class"))
+      const h2 = document.createElement("h2");
+      h2.textContent = "Heading 2";
+      document.body.append(h2);
+
+      // const ul = document.querySelector("ul");
+      //  const ul = document.createElement("ul")
+      //  document.body.appendChild(ul)
+      //   const fruits1 = ["Apple", "Mango", "Banana"];
+      //   fruits1.forEach((fruit) => {
+      //     const li = document.createElement("li")
+      //     li.textContent = fruit
+      //     ul.appendChild(li)
+      //   });
+
+      const products1 = [
+        { name: "Laptop", price: 80000 },
+        { name: "Phone", price: 50000 },
+      ];
+
+      products1.forEach((item) => {
+        const div = document.createElement("div");
+        div.classList = "card";
+        document.body.appendChild(div);
+
+        const h3 = document.createElement("h3");
+        h3.textContent = item.name;
+        div.appendChild(h3);
+        const p = document.createElement("p");
+        p.textContent = item.price;
+        div.appendChild(p);
+      });
+    </script>
+  </body>
 </html>

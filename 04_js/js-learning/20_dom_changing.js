@@ -1,5 +1,5 @@
 // ============================================================
-// Changing, Creating, and Removing Elements
+// Creating,Changing,and Removing Elements
 // ============================================================
 //
 // In the last lesson you learned to find and read elements. Now
@@ -91,7 +91,7 @@ const image1 = document.querySelector("#photo")
 
 link1.href = "https://github.com"
 image1.src = "dog.jpg"
-image1.setAttribute("alt", "A dog")
+image1.setAttribute("src", "dog.jpg")
 
 // ------------------------------------------------------------
 // Creating New Elements

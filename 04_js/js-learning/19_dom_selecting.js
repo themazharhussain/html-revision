@@ -81,7 +81,7 @@ const title2 = document.getElementById("title")
 // <li class="item">Mango</li>
 // <li class="item">Banana</li>
 
-const items1 = document.querySelectorAll(".item")
+const items1 = document.querySelectorAll(".item")// It will return node list
 
 console.log(items1.length)   // 3
 
@@ -117,7 +117,7 @@ console.log(title3.textContent)   // Welcome to My Shop
 // tags.
 //
 // <div id="box">
-//     <strong>Important</strong> message
+//     <strong>Important Message</strong>
 // </div>
 
 const box1 = document.querySelector("#box")
