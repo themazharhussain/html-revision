@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Events Learning</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .card {
+        width: 500px;
+        background-color: rebeccapurple;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="card">
+        <h1>Book</h1>
+        <p>This book will make you perfect developer</p>
+        <button id="btn-cart">Add to cart</button>
+      </div>
+      <form>
+        <input type="text" id="username" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      const div = document.querySelector(".card");
+      //   function clickHandler(event) {
+      //     //please console whole event object and check properties and values inside this object
+      //     // console.log(event);
+      //     div.style.backgroundColor = "red";
+      //   }
+      //   div.addEventListener("click", clickHandler);
+
+      //   function hoverHandler(event) {
+      //     div.style.backgroundColor = "red";
+      //   }
+
+      //   div.addEventListener("mouseover", hoverHandler);
+
+      //   div.addEventListener("mouseout", function () {
+      //     div.style.backgroundColor = "rebeccapurple";
+      //   });
+      //   div.addEventListener("dblclick", function () {
+      //     div.style.backgroundColor = "green";
+      //   });
+      //   document.addEventListener("keydown", (event) => {
+      //     console.log(event.key);
+      //   });
+
+      //   document.addEventListener("keyup", (event) => {
+      //     console.log(event.key);
+      //   });
+
+      //   const input = document.querySelector("#username");
+      //   const p = document.querySelector("p");
+      //   const button = document.querySelector("button");
+      //   //   textInput.addEventListener("input", function (event) {
+      //   //     // console.log(event.target.value);
+      //   //     // p.textContent = event.target.value;
+      //   //   });
+      //   button.addEventListener("click", function (event) {
+      //     event.preventDefault(); // It prevents default element behavior
+      //     if (input.value === "") return;
+      //     p.textContent = input.value;
+      //     input.value = "";
+      //     button.textContent = "Submitted";
+      //   });
+      const btnCart = document.querySelector("#btn-cart");
+      btnCart.addEventListener("click", function () {
+        console.log(event.type);
+        btnCart.textContent = "Purchased";
+        btnCart.setAttribute("disabled", "disabled");
+      });
+    </script>
+  </body>
+</html>

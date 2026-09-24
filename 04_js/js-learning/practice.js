@@ -641,8 +641,8 @@ const person14 = JSON.parse(JSON.stringify(person12))
 
 
 //person13.name = "Amber"
-person14.address.city = "Karachi"
-person14.address.country.countryCode = "US"
+// person14.address.city = "Karachi"
+// person14.address.country.countryCode = "US"
 
-console.log(person12)
-console.log(person14)
+// console.log(person12)
+// console.log(person14)
