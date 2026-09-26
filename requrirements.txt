@@ -1,0 +1,6 @@
+Make a todo app.
+
+1. User can add tasks
+2. User can delete tasks
+3. User can edit tasks
+4. User can make task completed
